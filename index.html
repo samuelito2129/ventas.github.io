@@ -140,16 +140,14 @@
          // Ejecutar la impresión después de cargar los parámetros
    window.print();
 
-    window.onafterprint = function() {
-      window.close();
-   };
+
     }
 
     window.onload = getQueryParams; // Ejecutar al cargar la página
   </script>
       
 </head>
-<body onload="getQueryParams()">
+<body onload="getQueryParams()"  onfocus="window.close()">
     <div class="centrar-texto">
       <p style="font-size: 14px;font-family: 'Roboto', sans-serif;  line-height: 0;"><b>HELADERÍA PRIMAVERA</b></p>
        <p style="font-size: 10px;font-family: Arial, sans-serif;line-height: 0;">TELÉFONO: 73196102 - 72627865</p> 
