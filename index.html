@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>papelito</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        .container {
+            display: flex;
+            font-size: 11.8px; 
+            font-family: Arial, sans-serif;
+            margin-top: 2px; /* Reduce el margen superior del párrafo */
+        }
+        p {
+            margin-right: 2px; /* Espacio entre los párrafos */
+            margin-top: 17px;
+            line-height: 0; /* Controla el interlineado dentro del párrafo */
+        }
+       .borde-especial {
+    border-bottom:1px dashed lightgray;  /* Cambia el estilo del borde inferior */
+}
+
+        .segunda-table {
+            margin-top: 2px; /* Ajusta el espacio superior de la segunda tabla */
+        
+        }
+        .primera-table {
+            border-bottom: 2px dashed black;
+            margin-bottom: 5px; /* Cambia el grosor y color del borde inferior */
+           
+        }
+        .primera-table th:nth-child(1),
+        .primera-table td:nth-child(1) {
+            width: 35%; /* Ancho de la primera columna de la primera tabla */
+        }
+
+        .primera-table th:nth-child(2),
+        .primera-table td:nth-child(2) {
+            width: 20%;
+            text-align: center; /* Ancho de la segunda columna de la primera tabla */
+        }
+        .primera-table th:nth-child(3),
+        .primera-table td:nth-child(3) {
+            width: 20%;
+            text-align: center; /* Ancho de la primera columna de la primera tabla */
+        }
+
+        .primera-table th:nth-child(4),
+        .primera-table td:nth-child(4) {
+            width: 25%;
+            text-align: right; /* Ancho de la segunda columna de la primera tabla */
+        }
+        
+       .tabla_total-table th:nth-child(1),
+        .tabla_total-table td:nth-child(1) {
+            width: 200px;
+            text-align: right; /* Modificar el ancho de la primera columna */
+        }
+
+        .tabla_total-table th:nth-child(2),
+        .tabla_total-table td:nth-child(2) {
+            width: 70px;
+            text-align: center;
+            background-color: #CECECE;
+            border: 2px solid white; /* Modificar el ancho de la segunda columna */
+            padding: 4px;
+        }
+       
+         .centrar-texto {
+            text-align: center; /* Alinear el texto al centro */
+        }
+        
+   
+        h2 {
+            font-size: 13px;
+            font-family: 'Lexend', sans-serif;
+            margin-bottom: 2px; /* Reduce el margen inferior del título */
+            line-height: 1; /* Controla la altura de línea dentro del título */
+           
+        }
+
+        body {
+          width: 6.6cm;
+          height: 14cm;
+          margin: 0 auto;
+
+          
+    
+        
+        
+        }
+        table, th, td {
+   
+    border-collapse: collapse; /* Borde sólido de 1 píxel en color negro */
+    width: 100%;
+    
+    
+  }
+  td {
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    padding: 1px;
+  }
+  th {
+    font-size: 12px;
+    padding: 6px;
+    font-family: 'oswald', sans-serif;
+    background-color: #CECECE;
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+  }
+ 
+@page {
+    margin: 1mm; /* Márgenes personalizados */
+}
+
+            
+      </style>
+  <script>
+    // Función para obtener los parámetros de la URL
+    function getQueryParams() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const campos = ["Nombre", "Fecha", "Hora", "cantbombon", "imp_crema", "cant_granizado", "cant_arbolito", "cant_gemelo", 
+                      "imp_agua", "cant_tamarindo", "cant_colores", "cant_cono", "imp_2bs", "cant_bombonato", "cant_crocante", 
+                      "imp_crocchoc", "cant_chococo", "cant_sandwich", "cant_vasotapa", "imp_vasotapa", "cant_festino", 
+                      "imp_festino", "cant_canaleado", "imp_canaleado", "cant_wafer", "imp_wafer", "subtotal", "descuento", 
+                      "recargo", "pagar"];
+
+      // Rellenar los campos si existen en los parámetros de la URL
+      campos.forEach(campo => {
+        const valor = urlParams.get(campo);
+        if (valor !== null) {
+          document.getElementById(campo).innerHTML = valor;
+        }
+      });
+    }
+
+    window.onload = getQueryParams; // Ejecutar al cargar la página
+  </script>
+      
+</head>
+<body onload="window.print()" onfocus="window.close()">
+    <div class="centrar-texto">
+      <p style="font-size: 14px;font-family: 'Roboto', sans-serif;  line-height: 0;"><b>HELADERÍA PRIMAVERA</b></p>
+       <p style="font-size: 10px;font-family: Arial, sans-serif;line-height: 0;">TELÉFONO: 73196102 - 72627865</p> 
+       <h2>TICKET DE VENTA</h2>
+    </div>
+    
+    <div class="container">    
+        <p>Para:</p>
+        <p id=Nombre></p>&nbsp;&nbsp;
+        <p>Fecha:</p>
+        <p id=Fecha></p>&nbsp;&nbsp;
+        <p>H:</p>
+        <p id="Hora"></p>
+    </div>   
+        
+    <table class="primera-table, primera-table">
+        <thead>
+            <tr>
+                <th>PRODUCTO</th>
+                <th>CANT.</th>
+                <th>PRECIO</th>
+                <th>IMPORTE</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Bombón</td>
+                <td id="cantbombon"></td>
+                <td rowspan="3">1</td>
+                <td rowspan="3", id="imp_crema"></td>
+               
+            </tr>
+            <tr>
+                <td>Granizado</td>
+                <td id="cant_granizado"></td>
+                
+            </tr>
+            <tr class="borde-especial">
+                <td>Arbolito</td>
+                <td id="cant_arbolito"></td>
+                
+            </tr>
+            <tr>
+                <td>Gemelo</td>
+                <td id="cant_gemelo"></td>
+                <td rowspan="3">0,6</td>
+                <td rowspan="3", id="imp_agua"></td>
+            </tr>
+            <tr>
+                <td>Tamarindo</td>
+                <td id="cant_tamarindo"></td>
+               
+            </tr>
+            <tr class="borde-especial">
+                <td>De Colores</td>
+                <td id="cant_colores"></td>
+                
+            </tr>
+            <tr>
+                <td>Cono</td>
+                <td id="cant_cono"></td>
+                <td rowspan="2">2</td>
+                <td rowspan="2", id="imp_2bs"></td>
+
+            </tr>
+            <tr class="borde-especial">
+                <td>Bombonato</td>
+                <td id="cant_bombonato"></td>
+                
+            </tr>
+           
+            <tr>
+                <td>Crocante</td>
+                <td id="cant_crocante"></td>
+                <td rowspan="3">2.5</td>
+                <td rowspan="3", id="imp_crocchoc"></td>
+            </tr>
+            <tr>
+                <td>Chococo</td>
+                <td id="cant_chococo"></td>
+                
+            </tr>
+            <tr class="borde-especial">
+                <td>Sandwich</td>
+                <td id="cant_sandwich"></td>
+                
+            </tr>
+            <tr class="borde-especial">
+                <td>Vaso_tapa</td>
+                <td id="cant_vasotapa"></td>
+                <td>1.5</td>
+                <td id="imp_vasotapa"></td>
+            </tr>
+            <tr class="borde-especial">
+                <td>Festino</td>
+                <td id="cant_festino"></td>
+                <td>3.5</td>
+                <td id="imp_festino"></td>
+            </tr>
+            <tr class="borde-especial">
+                <td>Canaleado</td>
+                <td id="cant_canaleado"></td>
+                <td>1.1</td>
+                <td id="imp_canaleado"></td>
+            </tr>
+            <tr>
+                <td>Wafer</td>
+                <td id="cant_wafer"></td>
+                <td>1.2</td>
+                <td id="imp_wafer"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="tabla_total-table">
+        <tr>
+            <td>SUBTOTAL:</td>
+            <td id="subtotal"></td>
+        </tr>
+        <tr>
+            <td>DESCUENTO:</td>
+            <td id="descuento"></td>
+        </tr>
+        <tr>
+            <td>RECARGO:</td>
+            <td id="recargo"></td>
+        </tr>
+        <tr>
+            <td><strong>PAGAR:</strong></td>
+            <td><strong id="pagar"></strong></td>
+        </tr>
+    </table>
+    <script>
+      document.getElementById("Nombre").innerHTML="<?= Nombre ?>";
+      document.getElementById("Fecha").innerHTML="<?= Fecha ?>";
+      document.getElementById("Hora").innerHTML="<?= Hora ?>";
+      document.getElementById("cantbombon").innerHTML="<?= cantbombon ?>";
+      document.getElementById("imp_crema").innerHTML="<?= imp_crema ?>";
+      document.getElementById("cant_granizado").innerHTML="<?= cant_granizado ?>";
+      document.getElementById("cant_arbolito").innerHTML="<?= cant_arbolito ?>";
+      document.getElementById("cant_gemelo").innerHTML="<?= cant_gemelo ?>";
+      document.getElementById("imp_agua").innerHTML="<?= imp_agua ?>";
+      document.getElementById("cant_tamarindo").innerHTML="<?= cant_tamarindo ?>";
+      document.getElementById("cant_colores").innerHTML="<?= cant_colores ?>";
+      document.getElementById("cant_cono").innerHTML="<?= cant_cono ?>";
+      document.getElementById("imp_2bs").innerHTML="<?= imp_2bs ?>";
+      document.getElementById("cant_bombonato").innerHTML="<?= cant_bombonato ?>";
+      document.getElementById("cant_crocante").innerHTML="<?= cant_crocante ?>";
+      document.getElementById("imp_crocchoc").innerHTML="<?= imp_crocchoc ?>";
+      document.getElementById("cant_chococo").innerHTML="<?= cant_chococo ?>";
+      document.getElementById("cant_sandwich").innerHTML="<?= cant_sandwich ?>";
+      document.getElementById("cant_vasotapa").innerHTML="<?= cant_vasotapa ?>";
+      document.getElementById("imp_vasotapa").innerHTML="<?= imp_vasotapa ?>";
+      document.getElementById("cant_festino").innerHTML="<?= cant_festino ?>";
+      document.getElementById("imp_festino").innerHTML="<?= imp_festino ?>";
+      document.getElementById("cant_canaleado").innerHTML="<?= cant_canaleado ?>";
+      document.getElementById("imp_canaleado").innerHTML="<?= imp_canaleado ?>";
+      document.getElementById("cant_wafer").innerHTML="<?= cant_wafer ?>";
+      document.getElementById("imp_wafer").innerHTML="<?= imp_wafer ?>";
+      document.getElementById("subtotal").innerHTML="<?= subtotal ?>";
+      document.getElementById("descuento").innerHTML="<?= descuento ?>";
+      document.getElementById("recargo").innerHTML="<?= recargo ?>";
+       document.getElementById("pagar").innerHTML="<?= pagar ?>";
+
+
+    </script>
+    
+
+</body>
+</html>
