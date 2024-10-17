@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
+        
         .container {
             display: flex;
             font-size: 11.8px; 
@@ -16,9 +17,10 @@
             margin-top: 2px; /* Reduce el margen superior del párrafo */
         }
         p {
-            margin-right: 2px; /* Espacio entre los párrafos */
+            margin-right: 1px; /* Espacio entre los párrafos */
             margin-top: 24px;
             line-height: 0; /* Controla el interlineado dentro del párrafo */
+            padding: 0;
         }
        .borde-especial {
     border-bottom:1px dashed lightgray;  /* Cambia el estilo del borde inferior */
@@ -80,6 +82,7 @@
             font-family: 'Lexend', sans-serif;
             margin-bottom: 2px; /* Reduce el margen inferior del título */
             line-height: 1; /* Controla la altura de línea dentro del título */
+            padding: 0;
            
         }
 
@@ -117,7 +120,15 @@
 @page {
     margin: 1mm; /* Márgenes personalizados */
 }
-
+@media print {
+  table {
+    background-color: inherit; /* Asegura que el fondo no se elimine */
+  }
+  
+  th, td {
+    background-color: #CECECE !important; /* Color de fondo específico para la impresión */
+  }
+}
             
       </style>
   <script>
