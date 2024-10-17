@@ -140,8 +140,9 @@
          // Ejecutar la impresión después de cargar los parámetros
    window.print();
 
-   // Cerrar la pestaña inmediatamente después de abrir el diálogo de impresión
-   window.close();
+    window.onafterprint = function() {
+      window.close();
+   };
     }
 
     window.onload = getQueryParams; // Ejecutar al cargar la página
