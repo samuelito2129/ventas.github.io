@@ -10,6 +10,7 @@
     
     <style>
         
+        
         .container {
             display: flex;
             font-size: 11.8px; 
@@ -80,9 +81,9 @@
         h2 {
             font-size: 13px;
             font-family: 'Lexend', sans-serif;
-            margin-bottom: 2px; /* Reduce el margen inferior del título */
+            margin-bottom: -15px; /* Reduce el margen inferior del título */
             line-height: 1; /* Controla la altura de línea dentro del título */
-            padding: 0;
+            padding: 0px;
            
         }
 
@@ -144,8 +145,9 @@
           document.getElementById(campo).innerHTML = valor;
         }
       });
-         // Ejecutar la impresión después de cargar los parámetros
+     // Ejecutar la impresión después de cargar los parámetros
    window.print();
+    
 
 
     }
@@ -154,9 +156,9 @@
   </script>
       
 </head>
-<body onload="getQueryParams()"  onfocus="window.close()">
+<body onload="getQueryParams()" onfocus="window.close()">
     <div class="centrar-texto">
-      <p style="font-size: 14px;font-family: 'Roboto', sans-serif;  line-height: 0;"><b>HELADERÍA PRIMAVERA</b></p>
+      <p style="font-size: 14px;font-family: 'Roboto', sans-serif;  margin-bottom: -10px;"><b>HELADERÍA PRIMAVERA</b></p>
        <p style="font-size: 10px;font-family: Arial, sans-serif;line-height: 0;">TELÉFONO: 73196102 - 72627865</p> 
        <h2>TICKET DE VENTA</h2>
     </div>
